@@ -1,9 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
+//using Unity.VisualScripting;
 using UnityEngine;
 
-public class Projectile : MonoBehaviour
+public class ClassProjectile : MonoBehaviour
 {
     public Vector3 _position;
     public System.Action destoyed;
