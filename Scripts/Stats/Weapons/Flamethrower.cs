@@ -1,31 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using WeaponInterface;
 using FireProj;
 
-public class NewBehaviourScript : MonoBehaviour, IWeapon
+public class Flamethrower : Weapon
 {
     public Fire Fire;
     public Transform FlameSpawn;
-    private int _levelCurrent = 0;
-    private float[] _rangeByLevel = { 2.5f,3f, 4f, 5f, 5f };
-    private float[] _damageByLevel = { 10, 15, 20, 30, 50 };
-    public int _levelMax { get; set; } = 5;
-    public float _fireRate { get; set; } = 0.5f;
+
+    private float[] rangeByLevel = new float[5] {2,4,6,8,10};
     public void shoot() 
     {
-        Fire._damage = _damageByLevel[_levelCurrent];
-        Fire._maxRange = _rangeByLevel[_levelCurrent];
+       // Fire.damage = damageperLevel[levelCurrent];
+        Fire.maxRange = rangeByLevel[levelCurrent];
         Instantiate(Fire, FlameSpawn.position, Quaternion.Euler(0, 0, 0));
-        _fireRate = 0.5f;
+        fireRate = 0.5f;
     }
+    private void Start()
+    {
+    fireRate = 0.5f;
+    damageperLevel = new float[5] {50,60,75,90,100 };
+}
 
     void Update()
     {
-        if (_fireRate > 0)
+        if (fireRate > 0)
         {
-            _fireRate -= Time.deltaTime / _fireRate;
+            fireRate -= Time.deltaTime / fireRate;
         }
         else
         {

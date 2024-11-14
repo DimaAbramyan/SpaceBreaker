@@ -3,21 +3,20 @@ using System.Collections.Generic;
 using FireProj;
 using LaserProj;
 using UnityEngine;
-using WeaponInterface;
 
-public class LaserGun : MonoBehaviour, IWeapon
+public class LaserGun : Weapon
 {
     public Laser Laser;
     public Transform LaserSpawn;
-    public int _levelMax { get; set; } = 5;
-    public float _fireRate { get; set; } = 0.0f;
-    private float[] _damageByLevel = { 10, 15, 20, 30, 50 };
-    public int _levelCurrent = 0;
     public void shoot()
     {
-        Laser._damage = _damageByLevel[_levelCurrent];
+        Laser.damage = damageperLevel[levelCurrent];
         Instantiate(Laser, LaserSpawn.position, Quaternion.Euler(0, 0, 0));
        
+    }
+    void Start()
+    {
+        damageperLevel = new float[5] { 0.3f, 0.4f, 0.5f, 0.7f, 0.9f };
     }
 
     // Update is called once per frame

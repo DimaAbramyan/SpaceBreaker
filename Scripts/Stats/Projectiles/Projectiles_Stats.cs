@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-namespace cProjectile
+public abstract class Projectile: MonoBehaviour
 {
-
-    public interface IProjectile
+    public float damage;
+    public float speed;
+    public float maxRange;
+    public float start_pos;
+    
+    void Start()
     {
-        float _damage { get; set; }
-        float _speed { get; set; }
+
     }
 }
