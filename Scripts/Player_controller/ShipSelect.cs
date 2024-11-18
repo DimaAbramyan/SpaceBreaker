@@ -7,6 +7,7 @@ using JetBrains.Annotations;
 using ShipInterface;
 public class ShipSelect : MonoBehaviour
 {
+    Bullet bullet = new Bullet();
     
     private static int selectedShip = 0;
     public static int previousSelectedShip;
@@ -20,7 +21,7 @@ public class ShipSelect : MonoBehaviour
     void Update()
     {
         //previousSelectedShip = selectedShip;
-        Debug.Log(selectedShip);
+       // Debug.Log(selectedShip);
         if (previousSelectedShip != selectedShip)
         {
             SelectShip();

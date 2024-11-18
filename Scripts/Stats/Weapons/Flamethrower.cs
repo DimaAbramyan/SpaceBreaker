@@ -6,31 +6,31 @@ using FireProj;
 public class Flamethrower : Weapon
 {
     public Fire Fire;
-    public Transform FlameSpawn;
+    private float _currentFireRate;
 
-    private float[] rangeByLevel = new float[5] {2,4,6,8,10};
-    public void shoot() 
-    {
-       // Fire.damage = damageperLevel[levelCurrent];
-        Fire.maxRange = rangeByLevel[levelCurrent];
-        Instantiate(Fire, FlameSpawn.position, Quaternion.Euler(0, 0, 0));
-        fireRate = 0.5f;
-    }
-    private void Start()
-    {
-    fireRate = 0.5f;
-    damageperLevel = new float[5] {50,60,75,90,100 };
-}
+    [SerializeField] public float[] _rangeByLevel;
 
-    void Update()
+    public override void Shoot() 
     {
-        if (fireRate > 0)
+        Fire.currentLvl = _levelCurrent;
+        if (_currentFireRate > 0)
         {
-            fireRate -= Time.deltaTime / fireRate;
+            _currentFireRate -= Time.deltaTime / _currentFireRate;
         }
         else
         {
-            shoot();
+            Instantiate(Fire, transform.position, Quaternion.Euler(0, 0, 0));
+            _currentFireRate = _fireRate;
         }
+    }
+    private void Start()
+    {
+        _currentFireRate = _fireRate;
+    }
+
+    void Update()
+    {
+        Shoot();
+
     }
 }

@@ -4,16 +4,19 @@ using UnityEngine;
 
 public abstract class Weapon : MonoBehaviour
 {
-    [HideInInspector] public float fireRate;
-    private int levelMax = 4;
-    public int levelCurrent = 0;
-    [HideInInspector] public float[] damageperLevel = new float[4];
-    void lvlUp()
+    [SerializeField] protected float _fireRate;
+    [SerializeField] public int _levelCurrent;
+    public static int _levelMax = 5;
+    public void lvlUp()
     {
-        levelCurrent++;
-        if (levelCurrent >= levelMax)
+        _levelCurrent++;
+        if (_levelCurrent >= _levelMax)
         {
-            levelCurrent = levelMax;
+            _levelCurrent = _levelMax;
         }
+    }
+    public virtual void Shoot()
+    {
+
     }
 }

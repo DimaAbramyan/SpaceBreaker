@@ -10,23 +10,24 @@ namespace Minigun_name
         public Pellet pellet;
         public Bullet bulletPref;
         public Transform bulletSpawn;
-        public static float[] rotationsAnglesperLvl = { 0, 2.5f, 5, 10, 15 };
+        private float _currentFireRate;
+        public static float[] rotationsAnglesPerLvL = { 0, 2.5f, 5, 10, 15 };
         private int shotGun_reload = 100;
-        public void shoot()
+        public override void Shoot()
         {
-            for (int i = levelCurrent; i>=0; i--)
+            for (int i = _levelCurrent; i>=0; i--)
             {
                 if (i == 0)
                 {
                     Bullet Centrbullet = Instantiate(bulletPref, bulletSpawn.position, Quaternion.Euler(0, 0, 0));
-                    fireRate = 0.4f;
+                    _currentFireRate = _fireRate;
                     shotGun_reload -= 1;
-                    break;
+                    continue;
                 }
-                Bullet bulletRight = Instantiate(bulletPref, bulletSpawn.position, Quaternion.Euler(0, 0, rotationsAnglesperLvl[i]));
-                Bullet bulletLeft = Instantiate(bulletPref, bulletSpawn.position, Quaternion.Euler(0, 0, -rotationsAnglesperLvl[i]));
+                Bullet bulletRight = Instantiate(bulletPref, bulletSpawn.position, Quaternion.Euler(0, 0, rotationsAnglesPerLvL[i]));
+                Bullet bulletLeft = Instantiate(bulletPref, bulletSpawn.position, Quaternion.Euler(0, 0, -rotationsAnglesPerLvL[i]));
                 shotGun_reload -= 2;
-                fireRate = 0.4f;
+                _currentFireRate = _fireRate;
             }
             if (shotGun_reload <= 0)
             {
@@ -37,25 +38,25 @@ namespace Minigun_name
                 shotGun_reload = 100;
             }
         }
-        private void Start()
-        {
-            fireRate = 0.4f;
-            damageperLevel = new float[5] { 4, 4, 4, 4, 4 };
-        }
         private void Update()
         {
-            if (fireRate > 0)
+            if (_currentFireRate > 0)
             {
-                fireRate -= Time.deltaTime / fireRate;
+                _currentFireRate -= Time.deltaTime / _currentFireRate;
 
             }
             else
             {
-                shoot();
+                Shoot();
             }
 
+
         }
-       
+        private void Start()
+        {
+            _currentFireRate = _fireRate;
+        }
+
     }
 
 }
