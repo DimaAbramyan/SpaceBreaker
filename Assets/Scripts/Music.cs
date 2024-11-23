@@ -2,22 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MusicManager : MonoBehaviour
+public class DontDestroy : MonoBehaviour
 {
-    private static MusicManager instance;
+    public static DontDestroy instance;
 
-    private void Awake()
+    void Start()
     {
-        // Если объект уже существует, уничтожаем новый экземпляр
-        if (instance != null && instance != this)
+        if (instance != null)
         {
             Destroy(gameObject);
         }
         else
         {
-            // Устанавливаем текущий объект как единственный экземпляр
             instance = this;
-            DontDestroyOnLoad(gameObject); // Не уничтожать объект при загрузке новой сцены
+            DontDestroyOnLoad(gameObject);
         }
     }
 }

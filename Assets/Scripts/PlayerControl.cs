@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
+//using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -9,12 +9,12 @@ public class PlayerControl : MonoBehaviour
     public Rigidbody2D rb;
     public float _controllability = 1;
     public Vector3 _maxspeed = new Vector3 (1f, 1f, 0f);
-    public Projectile lasPref;
+    public ClassProjectile lasPref;
     Vector3 _currentPosition;
     Vector3 _currentSpeed;
     private void Start()
     {
-        InvokeRepeating(nameof(Shoot), 0, Projectile._cooldown);
+        InvokeRepeating(nameof(Shoot), 0, ClassProjectile._cooldown);
     }
    
     private void FixedUpdate()
@@ -29,7 +29,7 @@ public class PlayerControl : MonoBehaviour
     }
     void Shoot()
     { 
-        Projectile projectile = Instantiate(lasPref, this.transform.position, Quaternion.identity);
+        ClassProjectile projectile = Instantiate(lasPref, this.transform.position, Quaternion.identity);
       
     }
     
