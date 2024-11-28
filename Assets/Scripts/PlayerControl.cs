@@ -16,7 +16,7 @@ public class PlayerControl : MonoBehaviour
     {
         InvokeRepeating(nameof(Shoot), 0, ClassProjectile._cooldown);
     }
-   
+
     private void FixedUpdate()
     {
         _currentPosition = gameObject.transform.position;
