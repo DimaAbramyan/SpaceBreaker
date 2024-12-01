@@ -3,8 +3,9 @@ using System.Collections.Generic;
 //using Unity.VisualScripting;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, iDamagable 
 {
+    [SerializeField] BuffLevel Buff;
     [SerializeField] HealthBar healthBar;
     [SerializeField] protected float _maxHealth;
     protected float _currentHealth;
@@ -17,9 +18,7 @@ public class Enemy : MonoBehaviour
     }
     public void TakeDamage(float t)
     {
-        Debug.Log(gameObject);
         _currentHealth -= t;
-        Debug.Log(_currentHealth);
 
         if (healthBar != null)
         {
@@ -32,8 +31,19 @@ public class Enemy : MonoBehaviour
     }
     public void Dying()
     {
+        
         Destroy(gameObject);
-        Debug.Log("ImDead");
+        if (this.CompareTag("Enemy"))
+        {
+            Enemies_Counter.Count++;
+
+        }
+        Debug.Log(Enemies_Counter.Count);
+
+        if (Buff != null && Random.Range(1, 8) == 1)
+        {
+            Instantiate(Buff, transform.position, Quaternion.identity);
+        }
     }
     
 }

@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.UIElements;
 
-public class SimpleShipWithShield : Enemy, iDamagable
+public class SimpleShipWithShield : Enemy
 {
 
     private void Update()

@@ -99,8 +99,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cee0dae8290de2c4980afabd5223a901, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 10
-  _MaxRange: 100
+  _damage: 7
+  _MaxRange: 10
   _speed: 10
 --- !u!70 &6255765937017172349
 CapsuleCollider2D:
@@ -162,5 +162,5 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 7

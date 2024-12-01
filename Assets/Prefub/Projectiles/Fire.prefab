@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d936805a0d5754541892513e52b1f5b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 50
+  _damage: 25
   currentLvl: 0
   _speed: 5
   flamethrower: {fileID: -1016283323454110567, guid: c76e8bd178dedde44b0a097fe9ce3f49, type: 3}

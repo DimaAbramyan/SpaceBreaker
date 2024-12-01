@@ -9,7 +9,15 @@ public abstract class EnemyProjectile: MonoBehaviour
 
     public virtual void TransformPosition(){}
     public virtual void DestroyProjByRange() { }
-    public virtual void OnCollisionEnter2D() { }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        iDamagable receiver = collision.gameObject.GetComponentInChildren<iDamagable>();
+        if (receiver != null)
+        {
+            receiver.TakeDamage(_damage);
+            Destroy(gameObject);
+        }
+    }
     private void Start()
     {
         

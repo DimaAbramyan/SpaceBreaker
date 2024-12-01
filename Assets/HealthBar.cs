@@ -10,7 +10,7 @@ public class HealthBar : MonoBehaviour
     [SerializeField] private Image fill;
     public void SetHealth(float health)
     {
-        canvasGroup.alpha = 0.8f;
+        canvasGroup.alpha = 1f;
         slider.value = health;
         fill.color = gradient.Evaluate(slider.normalizedValue);
     }

@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.UIElements;
 
-public class CircleShip : Enemy, iDamagable
+public class CircleShip : Enemy
 {
     [SerializeField] private EnemyBullet EnBullet;
     private float Timer;
@@ -22,7 +22,6 @@ public class CircleShip : Enemy, iDamagable
     }
     protected void Shoot()
     {
-
         Timer -= Time.deltaTime / Timer;
         if (Timer <= 0)
         {

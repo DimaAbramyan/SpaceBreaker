@@ -31,16 +31,5 @@ public class EnemyBullet : EnemyProjectile
 
         DestroyProjByRange();
     }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        iDamagable receiver = collision.gameObject.GetComponentInChildren<iDamagable>();
-        Debug.Log(receiver);
-        if (receiver != null)
-        {
-            receiver.TakeDamage(_damage);
-            Destroy(gameObject);
-        }
-        
-
-    }
+    
 }

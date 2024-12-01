@@ -7,6 +7,7 @@ namespace Minigun_name
 {
     public class Minigun : Weapon
     {
+        private Ship ship ;
         public Pellet pellet;
         public Bullet bulletPref;
         public Transform bulletSpawn;
@@ -15,7 +16,7 @@ namespace Minigun_name
         private int shotGun_reload = 100;
         public override void Shoot()
         {
-            for (int i = _levelCurrent; i>=0; i--)
+            for (int i = ship._currentLvl; i>=0; i--)
             {
                 if (i == 0)
                 {
@@ -43,7 +44,6 @@ namespace Minigun_name
             if (_currentFireRate > 0)
             {
                 _currentFireRate -= Time.deltaTime / _currentFireRate;
-
             }
             else
             {
@@ -55,8 +55,8 @@ namespace Minigun_name
         private void Start()
         {
             _currentFireRate = _fireRate;
+            ship= GetComponentInParent<Ship>();
         }
-
     }
 
 }

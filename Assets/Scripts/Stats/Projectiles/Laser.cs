@@ -5,33 +5,33 @@ namespace LaserProj
 {
     public class Laser : Projectile
     {
-        private Vector3 _position;
-        private LaserGun laserGun;
+        Ship ship;
+        private Vector3 scale;
+        [SerializeField] private float[] scalePerLvL;
         private float laserLenght = 10;
-        void Start()
-        {
-            laserGun = GameObject.Find("LaserGun").GetComponent<LaserGun>();
-            transform.position = laserGun.transform.position;
-            transform.localPosition += new Vector3(0, 5.5f);
-            Vector3 lTemp = transform.localScale;
-            lTemp.x = laserGun._ScalePerLvL[laserGun._levelCurrent];
-            transform.localScale = lTemp;
-        }
+        private int currentLvl;
+        float check;
 
-        void Update()
+        private void Start()
         {
-            Destroy(this.gameObject);
+            ship = GetComponentInParent<Ship>();
+            transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y*3, transform.localScale.z);
+            transform.position = transform.position + new Vector3(0, 7, 0);
+            scale = transform.localScale;
         }
-        private void OnTriggerEnter2D(Collider2D collision)
+        private void OnTriggerStay2D(Collider2D collision)
         {
-
             iDamagable receiver = collision.gameObject.GetComponent<iDamagable>();
-
             if (receiver != null)
             {
                 receiver.TakeDamage(_damage);
 
             }
+        }
+        private void Update()
+        {
+                scale.x = scalePerLvL[ship._currentLvl];
+                transform.localScale = scale;
         }
     }
 }

@@ -6,23 +6,11 @@ using UnityEngine;
 
 public class LaserGun : Weapon
 {
+    private int _levelCurrent;
     public Laser Laser;
     public Transform LaserSpawn;
-    [SerializeField] public float[] _ScalePerLvL;
-    public void shoot()
+    public void Update()
     {
-       // Laser._damage = damageperLevel[_levelCurrent];
-        Instantiate(Laser, LaserSpawn.position, Quaternion.Euler(0, 0, 0));
-       
-    }
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        shoot();
+        //Laser._levelCurrent = _levelCurrent;
     }
 }

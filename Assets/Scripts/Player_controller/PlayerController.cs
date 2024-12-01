@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 namespace PlayerController
 {
 
@@ -19,6 +20,9 @@ namespace PlayerController
             _currentPosition = gameObject.transform.position;
             for (int i = 0; i < Input.touchCount; i++)
             {
+                Touch touch = Input.GetTouch(i);
+                if (EventSystem.current.IsPointerOverGameObject(touch.fingerId))
+                    return;
                 Vector3 touchPosition = Camera.main.ScreenToWorldPoint(Input.touches[i].position);
                 _currentSpeed = (touchPosition - _currentPosition);
                 playerRB.AddForce((_currentSpeed * speed));

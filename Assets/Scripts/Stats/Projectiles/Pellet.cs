@@ -38,7 +38,6 @@ public class Pellet : Projectile
         if (receiver != null)
         {
             receiver.TakeDamage(_damage);
-            Debug.Log("Take Damage by Pellet!");
         }
         Destroy(this.gameObject);
     }

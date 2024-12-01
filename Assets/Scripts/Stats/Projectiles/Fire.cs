@@ -20,8 +20,6 @@ namespace FireProj
         }
         void Update()
         {
-            
-            //flamethrower = GetComponent<Flamethrower>();
             TransformPosition();
         }
         public override void TransformPosition()

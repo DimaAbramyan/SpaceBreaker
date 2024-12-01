@@ -5,14 +5,15 @@ using FireProj;
 
 public class Flamethrower : Weapon
 {
-    public Fire Fire;
+    private Ship ship;
+    [SerializeField] private Fire Fire;
     private float _currentFireRate;
-
+   
     [SerializeField] public float[] _rangeByLevel;
 
     public override void Shoot() 
     {
-        Fire.currentLvl = _levelCurrent;
+        
         if (_currentFireRate > 0)
         {
             _currentFireRate -= Time.deltaTime / _currentFireRate;
@@ -23,14 +24,16 @@ public class Flamethrower : Weapon
             _currentFireRate = _fireRate;
         }
     }
-    private void Start()
+    private void Awake()
     {
-        _currentFireRate = _fireRate;
+        ship = GetComponentInParent<Ship>();
+
+
     }
 
     void Update()
     {
         Shoot();
-
+        Fire.currentLvl = ship._currentLvl;
     }
 }
