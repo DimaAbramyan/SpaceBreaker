@@ -66,6 +66,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.02
+  startPos: {x: 0, y: 0, z: 0}
+  endPos: {x: 0, y: 0, z: 0}
+  duration: 0
 --- !u!114 &8082676324204806344
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -15,6 +15,8 @@ public class Sound : MonoBehaviour
     private void Awake()
     {
         slider.onValueChanged.AddListener(HandleSliderValueChanged);
+        _volumeValue = PlayerPrefs.GetFloat(volumeParameter, Mathf.Log10(slider.value) * _multiplier);
+        slider.value = Mathf.Pow(10f, _volumeValue / _multiplier);
     }
 
     private void HandleSliderValueChanged(float value)
@@ -25,8 +27,7 @@ public class Sound : MonoBehaviour
 
     private void Start()
     {
-        _volumeValue = PlayerPrefs.GetFloat(volumeParameter, Mathf.Log10(slider.value) * _multiplier);
-        slider.value = Mathf.Pow(10f, _volumeValue / _multiplier);
+        
     }
 
     private void OnDisable()

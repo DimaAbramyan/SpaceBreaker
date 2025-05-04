@@ -81,7 +81,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2010e27f2ef5844d96f68b3d2affcc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  looped: 0
   speed: 0.001
+  startPos: {x: 1, y: 9, z: 0}
+  endPos: {x: 1, y: 5, z: 0}
+  duration: 2
 --- !u!114 &8082676324204806344
 MonoBehaviour:
   m_ObjectHideFlags: 0

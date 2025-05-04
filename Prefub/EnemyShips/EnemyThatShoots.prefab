@@ -258,7 +258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DamageShowing: {fileID: 0}
-  Buff: {fileID: 4266007181229307235, guid: ab0c2b20b8f62f24ebdb65376eabf60c, type: 3}
+  Buff: {fileID: 3895279441107708134, guid: ab0c2b20b8f62f24ebdb65376eabf60c, type: 3}
   healthBar: {fileID: 574577347014002235}
   _maxHealth: 750
   _fireRate: 5

@@ -131,9 +131,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9355ef18de83124996f69ae0e98fd77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DamageShowing: {fileID: 0}
   Buff: {fileID: 0}
   healthBar: {fileID: 0}
-  _maxHealth: 250
+  _maxHealth: 600
   _fireRate: 1
   _damage: 0
   _speed: 0

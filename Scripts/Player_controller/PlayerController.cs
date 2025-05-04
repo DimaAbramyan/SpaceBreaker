@@ -7,7 +7,7 @@ namespace PlayerController
 
     public class PlayerControllerClass : MonoBehaviour
     {
-        [SerializeField] private Rigidbody2D playerRB; // точка, €вл€юща€с€ ма€ком дл€ изменени€ корпуса. »менно она перемещаетс€ в пространстве
+        [SerializeField] private Rigidbody2D playerRB; 
         float speed;
         Vector3 _currentSpeed;
         Vector3 _currentPosition;

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7661134648787641713}
   - component: {fileID: 4429526176760743141}
   - component: {fileID: 763682028887971726}
-  - component: {fileID: 4266007181229307235}
+  - component: {fileID: 3895279441107708134}
   m_Layer: 10
   m_Name: BUFF_LVL_UP 2
   m_TagString: Untagged
@@ -153,7 +153,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &4266007181229307235
+--- !u!114 &3895279441107708134
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

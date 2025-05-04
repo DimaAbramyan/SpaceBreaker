@@ -500,6 +500,7 @@ GameObject:
   - component: {fileID: 7038555184185200748}
   - component: {fileID: 7900007370852807969}
   - component: {fileID: 630659530258638916}
+  - component: {fileID: 5834106255664807950}
   m_Layer: 8
   m_Name: Destructor 1
   m_TagString: Enemy
@@ -536,10 +537,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b4ad23bee9f01644ba598b6ae918e4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDead: 0
   DamageShowing: {fileID: 0}
-  Buff: {fileID: 4266007181229307235, guid: ab0c2b20b8f62f24ebdb65376eabf60c, type: 3}
+  Buff: {fileID: 3895279441107708134, guid: ab0c2b20b8f62f24ebdb65376eabf60c, type: 3}
   healthBar: {fileID: 2563224796654966712}
   _maxHealth: 1500
+  _currentHealth: 0
   _fireRate: 0
   _damage: 0
   _speed: 0
@@ -640,6 +643,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.18886995}
   m_EdgeRadius: 0
+--- !u!114 &5834106255664807950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6714499762787394222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 049d7e245d3d7f54ba1730cd31b5f968, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &252766060899852232
 PrefabInstance:
   m_ObjectHideFlags: 0

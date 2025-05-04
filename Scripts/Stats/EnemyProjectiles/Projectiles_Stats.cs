@@ -13,12 +13,13 @@ public abstract class EnemyProjectile: MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         FirstShip receiver = collision.gameObject.GetComponentInChildren<FirstShip>();
-        
-        if (receiver != null)
+        Parameters param = FindAnyObjectByType<Parameters>();
+        if (receiver != null && !param.IsGodModeOn)
         {
             receiver.TakeDamage(_damage);
-            Destroy(gameObject);
+            
         }
+        Destroy(gameObject);
     }
     private void Start()
     {

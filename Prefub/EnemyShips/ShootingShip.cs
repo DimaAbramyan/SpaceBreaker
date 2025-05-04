@@ -39,8 +39,14 @@ public class ShootingShip : Enemy
     }
     private void StartAnimation()
     {
-        Instantiate(EnBullet, transform.position + new Vector3(0,-0.25f), Quaternion.Euler(0, 0, 0));
+        Vector3 direction = transform.up.normalized;
+        EnemyBullet bull = Instantiate(EnBullet, transform.position + new Vector3(0, -0.25f), Quaternion.identity);
+        bull._position = direction;
+
+        // Поворачиваем снаряд в сторону направления полёта
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        bull.transform.rotation = Quaternion.Euler(0, 0, angle+90);
+
         animator.SetBool("Shooting", false);
     }
-    
 }

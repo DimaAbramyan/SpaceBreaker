@@ -98,6 +98,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e28a78e8671523468abadacb26def1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameOver: {fileID: 577813557747612616, guid: a23c4733b4c532d4085a9addd0f1a715, type: 3}
+  _current_SP: 0
+  _current_HP: 0
   ship_Data: {fileID: 11400000, guid: 0d9d8840c3fe6de4cb4056d7d1b54472, type: 2}
   healthBar: {fileID: 0}
   ShieldBar: {fileID: 0}

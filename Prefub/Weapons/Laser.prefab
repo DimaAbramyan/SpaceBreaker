@@ -47,13 +47,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89b9a608f62741a479327c8971ce7407, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 0.6
+  _damage: 1.35
   scalePerLvL:
   - 0.2
   - 0.24
   - 0.3
   - 0.4
   - 0.6
+  damagePerLvl:
+  - 1.35
+  - 1.65
+  - 2
+  - 2.5
+  - 3
 --- !u!212 &805651406311546508
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -94,9 +100,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 100
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.7203462, g: 1, b: 0, a: 1}
+  m_Color: {r: 0.7203462, g: 1, b: 0, a: 0.2509804}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

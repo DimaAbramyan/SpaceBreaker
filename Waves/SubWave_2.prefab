@@ -75,6 +75,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.01
+  startPos: {x: 0, y: 0, z: 0}
+  endPos: {x: 0, y: 0, z: 0}
+  duration: 0
 --- !u!114 &8082676324204806344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87,7 +90,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfe34cda70fd6df4887726ac04fc176e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
 --- !u!1001 &294257328684610118
 PrefabInstance:
   m_ObjectHideFlags: 0

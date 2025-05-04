@@ -414,6 +414,7 @@ GameObject:
   - component: {fileID: 6499832558807813640}
   - component: {fileID: 5037478290123640376}
   - component: {fileID: 6096623289230616641}
+  - component: {fileID: 8845289246894337151}
   m_Layer: 8
   m_Name: RealEnemyThatShoots 1
   m_TagString: Enemy
@@ -431,8 +432,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
   m_LocalPosition: {x: -0.387, y: 3.945, z: 0.0043778196}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: -0.6, y: 0.6, z: 0.6}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6010532340053437853}
   m_Father: {fileID: 0}
@@ -582,12 +583,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be710ff34493abc44a5c31d2bdf59545, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDead: 0
   DamageShowing: {fileID: 0}
-  Buff: {fileID: 4266007181229307235, guid: ab0c2b20b8f62f24ebdb65376eabf60c, type: 3}
+  Buff: {fileID: 0}
   healthBar: {fileID: 5164577820812287213}
   _maxHealth: 750
+  _currentHealth: 0
   _fireRate: 7
   _damage: 10
   _speed: 0
   EnBullet: {fileID: 3753107629597168881, guid: afb091c3ba610af4881b4a9c54df527f, type: 3}
   animator: {fileID: 153421595797470632}
+--- !u!114 &8845289246894337151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6259211620933785818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 049d7e245d3d7f54ba1730cd31b5f968, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

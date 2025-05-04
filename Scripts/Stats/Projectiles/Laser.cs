@@ -11,13 +11,12 @@ namespace LaserProj
         private float laserLenght = 10;
         private int currentLvl;
         float check;
-
+        [SerializeField] private List<float> damagePerLvl;
         public void Start()
         {
             ship = GetComponentInParent<FirstShip>();
             transform.localScale = new Vector3(transform.localScale.x/5, transform.localScale.y*3, transform.localScale.z);
             int Id = ship.ship_Data.shipId;
-            float blyat = 0;
             
             scale = transform.localScale;
             transform.localScale = new Vector3(1,1,1);
@@ -38,6 +37,7 @@ namespace LaserProj
         public void Update()
         {
 
+            _damage = damagePerLvl[ship.ship_Data.shipId];
             scale.x = scalePerLvL[ship.ship_Data._currentLvl]; //Не спрашивайте
             
             transform.localScale = scale;

@@ -32,6 +32,7 @@ namespace FireProj
         }
         void Update()
         {
+            if (Time.timeScale == 0) return;
             form = transform.localScale;
             ChangeColour();
             TransformPosition();

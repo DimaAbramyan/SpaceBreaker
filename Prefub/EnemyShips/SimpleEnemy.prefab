@@ -204,6 +204,7 @@ GameObject:
   - component: {fileID: 8501859359161417947}
   - component: {fileID: -4444264774722151541}
   - component: {fileID: 3618401856035243148}
+  - component: {fileID: 2074232145891550923}
   m_Layer: 8
   m_Name: SimpleEnemy
   m_TagString: Enemy
@@ -291,10 +292,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b305e2a21190fc4489d90537458061e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDead: 0
   DamageShowing: {fileID: 0}
-  Buff: {fileID: 4266007181229307235, guid: ab0c2b20b8f62f24ebdb65376eabf60c, type: 3}
+  Buff: {fileID: 3895279441107708134, guid: ab0c2b20b8f62f24ebdb65376eabf60c, type: 3}
   healthBar: {fileID: 7898183990435649192}
-  _maxHealth: 350
+  _maxHealth: 500
+  _currentHealth: 0
   _fireRate: 3
   _damage: 5
   _speed: 0
@@ -380,6 +383,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.95, y: 0.45412076}
   m_EdgeRadius: 0
+--- !u!114 &2074232145891550923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5338232493570567985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 049d7e245d3d7f54ba1730cd31b5f968, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LockedLook: 1
 --- !u!1 &8205130722611791441
 GameObject:
   m_ObjectHideFlags: 0
